@@ -1,3 +1,5 @@
 firebase-admin
 pandas
 openpyxl
+numpy
+matplotlib

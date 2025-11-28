@@ -62,6 +62,14 @@ def medicionesQuery(id_semana):
     medicion=cursor.fetchall()
     return medicion
 
-
+def data_sets(id_semana):
+    cursor=instBD()
+    cursor.execute(f"SELECT temperatura FROM mediciones where id_semana={id_semana}")
+    temperatura=cursor.fetchall()
+    cursor.execute(f"SELECT humedad FROM mediciones where id_semana={id_semana}")
+    humedad=cursor.fetchall()
+    cursor.execute(f"SELECT fecha FROM mediciones where id_semana={id_semana}")
+    fecha=cursor.fetchall()
+    return temperatura, humedad, fecha
 # Cerrar la conexión
 conexion.close()
